@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,29 +62,30 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Custom Glassmorphism & Glow Effects */
+    /* Dark Theme Custom Glow & Gradients */
+    body {
+      background-color: #0b0f19;
+      color: #f1f5f9;
+    }
     .glass-nav {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .dark .glass-nav {
-      background: rgba(15, 23, 42, 0.85);
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
     .gradient-text {
-      background: linear-gradient(135deg, #026fc7 0%, #6366f1 50%, #8b5cf6 100%);
+      background: linear-gradient(135deg, #38a9f7 0%, #818cf8 50%, #c084fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .gradient-border {
-      background: linear-gradient(135deg, rgba(2, 111, 199, 0.3), rgba(99, 102, 241, 0.3));
+    .dark-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    /* Hide scrollbar for tabs */
+    .dark-card-hover:hover {
+      border-color: rgba(14, 141, 233, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(14, 141, 233, 0.15);
+    }
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -94,78 +95,78 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brand-500 selection:text-white">
+<body class="bg-[#0b0f19] text-slate-100 antialiased font-sans selection:bg-brand-500 selection:text-white">
 
   <!-- ==================== TOP ANNOUNCEMENT BANNER ==================== -->
-  <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-indigo-900 text-white text-xs md:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 relative">
-    <span class="bg-brand-500/40 text-brand-100 text-[11px] font-bold px-2 py-0.5 rounded-full border border-brand-300/30">BARU v2.4</span>
+  <div class="bg-gradient-to-r from-slate-950 via-brand-950 to-indigo-950 text-slate-300 text-xs md:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-white/5 relative">
+    <span class="bg-brand-500/20 text-brand-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-brand-500/30">BARU v2.4</span>
     <span>⚡ Integrasi Langsung dengan Zoom, Google Meet & Microsoft Teams. Coba Gratis 14 Hari Tanpa Kartu Kredit!</span>
-    <a href="#demo-preview" class="underline hover:text-brand-200 ml-1 inline-flex items-center gap-1 font-semibold">
+    <a href="#demo-preview" class="underline text-brand-400 hover:text-brand-300 ml-1 inline-flex items-center gap-1 font-semibold">
       Coba Sekarang <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
     </a>
   </div>
 
-  <!-- ==================== NAVBAR ==================== -->
-  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 transition-all duration-200" id="main-header">
+  <!-- ==================== NAVBAR (DARK THEME) ==================== -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-200" id="main-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Logo -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-200">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-200">
           <i data-lucide="file-check-2" class="w-6 h-6"></i>
         </div>
         <div>
-          <span class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
-            Notula<span class="text-brand-600">MoM</span>
+          <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
+            Notula<span class="text-brand-400">MoM</span>
           </span>
-          <span class="block text-[10px] font-semibold uppercase tracking-wider text-slate-500 -mt-1">Minutes of Meeting AI</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 -mt-1">Minutes of Meeting AI</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
-        <a href="#fitur" class="hover:text-brand-600 transition-colors">Fitur Unggulan</a>
-        <a href="#cara-kerja" class="hover:text-brand-600 transition-colors">Cara Kerja</a>
-        <a href="#demo-preview" class="hover:text-brand-600 transition-colors flex items-center gap-1">
-          Interactive MoM <span class="text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded font-bold">Demo</span>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#fitur" class="hover:text-brand-400 transition-colors">Fitur Unggulan</a>
+        <a href="#cara-kerja" class="hover:text-brand-400 transition-colors">Cara Kerja</a>
+        <a href="#demo-preview" class="hover:text-brand-400 transition-colors flex items-center gap-1">
+          Interactive MoM <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold">Demo</span>
         </a>
-        <a href="#roi-calculator" class="hover:text-brand-600 transition-colors">Kalkulator Hemat</a>
-        <a href="#harga" class="hover:text-brand-600 transition-colors">Harga</a>
-        <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+        <a href="#roi-calculator" class="hover:text-brand-400 transition-colors">Kalkulator Hemat</a>
+        <a href="#harga" class="hover:text-brand-400 transition-colors">Harga</a>
+        <a href="#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
       </nav>
 
       <!-- Desktop CTA Actions -->
       <div class="hidden lg:flex items-center gap-3">
-        <button onclick="openDemoModal('Masuk Akun')" class="text-sm font-semibold text-slate-700 hover:text-brand-600 px-3 py-2 transition-colors">
+        <button onclick="openDemoModal('Masuk Akun')" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 transition-colors">
           Masuk
         </button>
-        <button onclick="openDemoModal('Daftar Uji Coba Gratis')" class="text-sm font-bold bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl shadow-md shadow-brand-600/20 hover:shadow-brand-600/35 transition-all duration-200 flex items-center gap-2 group">
+        <button onclick="openDemoModal('Daftar Uji Coba Gratis')" class="text-sm font-bold bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 transition-all duration-200 flex items-center gap-2 group">
           <span>Coba Gratis</span>
           <i data-lucide="sparkles" class="w-4 h-4 text-brand-200 group-hover:rotate-12 transition-transform"></i>
         </button>
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors" aria-label="Toggle Menu">
+      <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors" aria-label="Toggle Menu">
         <i data-lucide="menu" id="hamburger-icon" class="w-6 h-6"></i>
       </button>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-xl">
-      <a href="#fitur" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link">Fitur Unggulan</a>
-      <a href="#cara-kerja" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link">Cara Kerja</a>
-      <a href="#demo-preview" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link flex items-center justify-between">
+    <!-- Mobile Drawer (Dark) -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-800 bg-[#0e1424] px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+      <a href="#fitur" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link">Fitur Unggulan</a>
+      <a href="#cara-kerja" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link">Cara Kerja</a>
+      <a href="#demo-preview" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link flex items-center justify-between">
         Interactive Demo
-        <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-bold">Coba Demo</span>
+        <span class="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-bold">Coba Demo</span>
       </a>
-      <a href="#roi-calculator" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link">Kalkulator Penghematan</a>
-      <a href="#harga" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link">Pilihan Paket & Harga</a>
-      <a href="#faq" class="block py-2 text-base font-semibold text-slate-700 hover:text-brand-600 mobile-nav-link">Tanya Jawab (FAQ)</a>
-      <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
-        <button onclick="openDemoModal('Masuk Akun')" class="w-full text-center py-2.5 rounded-lg border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 text-sm">
+      <a href="#roi-calculator" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link">Kalkulator Penghematan</a>
+      <a href="#harga" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link">Pilihan Paket & Harga</a>
+      <a href="#faq" class="block py-2 text-base font-semibold text-slate-200 hover:text-brand-400 mobile-nav-link">Tanya Jawab (FAQ)</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-2">
+        <button onclick="openDemoModal('Masuk Akun')" class="w-full text-center py-2.5 rounded-lg border border-slate-700 text-slate-200 font-semibold hover:bg-slate-800 text-sm">
           Masuk ke Akun
         </button>
-        <button onclick="openDemoModal('Daftar Uji Coba Gratis')" class="w-full text-center py-2.5 rounded-lg bg-brand-600 text-white font-bold hover:bg-brand-700 shadow-md text-sm flex items-center justify-center gap-2">
+        <button onclick="openDemoModal('Daftar Uji Coba Gratis')" class="w-full text-center py-2.5 rounded-lg bg-brand-600 text-white font-bold hover:bg-brand-500 shadow-md text-sm flex items-center justify-center gap-2">
           <i data-lucide="sparkles" class="w-4 h-4"></i>
           <span>Mulai Gratis 14 Hari</span>
         </button>
@@ -173,188 +174,188 @@
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-white via-brand-50/40 to-slate-50">
-    <!-- Background Glow Blobs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-brand-300/30 to-indigo-300/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
-    <div class="absolute top-10 right-10 w-72 h-72 bg-emerald-200/20 rounded-full blur-2xl pointer-events-none -z-10"></div>
+  <!-- ==================== HERO SECTION (DARK) ==================== -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-[#0b0f19]">
+    <!-- Ambient Glow Backgrounds -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-brand-600/20 via-indigo-600/15 to-purple-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute top-10 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-brand-700 mb-6 animate-pulse-slow">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-          <span class="w-2 h-2 rounded-full bg-emerald-500 -ml-3"></span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-inner text-xs font-semibold text-brand-300 mb-6 animate-pulse-slow">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-3"></span>
           <span>#1 Platform Minutes of Meeting (MoM) Berbasis AI di Indonesia</span>
         </div>
 
         <!-- Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15] mb-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
           Ubah Setiap Rapat Jadi <br class="hidden sm:inline">
           <span class="gradient-text">Minutes of Meeting (MoM) Akurat</span> & Action Items Siap Eksekusi
         </h1>
 
         <!-- Subheadline -->
-        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal mb-8 max-w-2xl mx-auto">
-          Tinggalkan cara lama mencatat manual berjam-jam. Sambungkan Zoom, Google Meet, Teams, atau upload audio rapat — AI kami menyusun ringkasan eksekutif, tabel PIC tugas, dan draft notulensi legal dalam <strong>hitungan detik</strong>.
+        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl mx-auto">
+          Tinggalkan cara lama mencatat manual berjam-jam. Sambungkan Zoom, Google Meet, Teams, atau upload audio rapat — AI kami menyusun ringkasan eksekutif, tabel PIC tugas, dan draft notulensi legal dalam <strong class="text-white">hitungan detik</strong>.
         </p>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          <button onclick="openDemoModal('Coba Gratis 14 Hari')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3">
+          <button onclick="openDemoModal('Coba Gratis 14 Hari')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-base shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3">
             <i data-lucide="zap" class="w-5 h-5 text-amber-300 fill-amber-300"></i>
             <span>Mulai Uji Coba Gratis</span>
           </button>
           
-          <a href="#demo-preview" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-bold text-base border border-slate-300 shadow-sm hover:border-slate-400 transition-all duration-200 flex items-center justify-center gap-2.5">
-            <i data-lucide="play-circle" class="w-5 h-5 text-brand-600"></i>
+          <a href="#demo-preview" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-base border border-slate-700 shadow-md hover:border-slate-600 transition-all duration-200 flex items-center justify-center gap-2.5">
+            <i data-lucide="play-circle" class="w-5 h-5 text-brand-400"></i>
             <span>Lihat Contoh Notulensi</span>
           </a>
         </div>
 
         <!-- Social Proof Metrics -->
-        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-500 font-medium pt-2 border-t border-slate-200/60 max-w-xl mx-auto">
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-400 font-medium pt-4 border-t border-slate-800 max-w-xl mx-auto">
           <div class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
             <span>99.2% Akurasi Bahasa Indonesia</span>
           </div>
           <div class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
             <span>Export PDF, Word & Markdown</span>
           </div>
           <div class="flex items-center gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
             <span>Standar Keamanan ISO 27001</span>
           </div>
         </div>
       </div>
 
-      <!-- Hero Visual: Simulated Interactive Meeting Dashboard -->
+      <!-- Hero Visual: Simulated Interactive Meeting Dashboard (Dark Glass) -->
       <div class="mt-12 lg:mt-16 relative max-w-5xl mx-auto">
-        <div class="rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-md shadow-2xl overflow-hidden">
+        <div class="rounded-2xl border border-slate-700/80 bg-slate-900/95 backdrop-blur-xl shadow-2xl shadow-black/80 overflow-hidden">
           <!-- Window Header Bar -->
-          <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between border-b border-slate-800">
+          <div class="bg-slate-950 text-white px-5 py-3.5 flex items-center justify-between border-b border-slate-800">
             <div class="flex items-center gap-2">
               <div class="flex gap-1.5">
-                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
               </div>
               <span class="text-xs text-slate-400 font-mono ml-3 hidden sm:inline">notula-mom-dashboard.app/live-session/m-88219</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                 Live Processing: Audio Rapat
               </span>
-              <span class="text-xs text-slate-400">00:42:15</span>
+              <span class="text-xs text-slate-400 font-mono">00:42:15</span>
             </div>
           </div>
 
           <!-- Hero UI Body -->
-          <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50/50">
-            <!-- Left Column: Audio Source & Participant Details -->
+          <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0e1424]">
+            <!-- Left Column -->
             <div class="lg:col-span-4 space-y-4">
-              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 shadow-md">
                 <div class="flex items-center justify-between mb-3">
                   <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Rapat Terkoneksi</span>
-                  <span class="text-xs font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-700">Google Meet</span>
+                  <span class="text-xs font-semibold px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30">Google Meet</span>
                 </div>
-                <h4 class="font-bold text-slate-900 text-sm">Sprint Planning Q3 & Launching Demo</h4>
-                <p class="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
-                  <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Rabu, 11 Nov 2026 • 14:00 - 15:00 WIB
+                <h4 class="font-bold text-white text-sm">Sprint Planning Q3 & Launching Demo</h4>
+                <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-brand-400"></i> Rabu, 11 Nov 2026 • 14:00 - 15:00 WIB
                 </p>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
                   <span>Partisipan Hadir:</span>
                   <div class="flex -space-x-1.5 overflow-hidden">
                     <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-500 text-white font-bold text-[10px]">AD</span>
                     <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-indigo-500 text-white font-bold text-[10px]">RK</span>
                     <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white font-bold text-[10px]">BL</span>
                     <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-[10px]">SM</span>
-                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-400 text-white font-bold text-[10px]">+4</span>
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-600 text-white font-bold text-[10px]">+4</span>
                   </div>
                 </div>
               </div>
 
               <!-- Real-time Speech to MoM Insight -->
-              <div class="bg-gradient-to-br from-brand-600 to-indigo-700 p-4 rounded-xl text-white shadow-md">
-                <div class="flex items-center justify-between text-xs text-brand-100 mb-2 font-medium">
+              <div class="bg-gradient-to-br from-brand-950 via-slate-900 to-indigo-950 p-4 rounded-xl text-white border border-brand-500/30 shadow-lg">
+                <div class="flex items-center justify-between text-xs text-brand-300 mb-2 font-medium">
                   <span class="flex items-center gap-1.5">
-                    <i data-lucide="mic" class="w-4 h-4 text-emerald-300 animate-pulse"></i>
+                    <i data-lucide="mic" class="w-4 h-4 text-emerald-400 animate-pulse"></i>
                     AI Listener Aktif
                   </span>
-                  <span class="text-[11px] bg-white/20 px-2 py-0.5 rounded">ID-ID + EN</span>
+                  <span class="text-[11px] bg-white/10 px-2 py-0.5 rounded border border-white/10">ID-ID + EN</span>
                 </div>
-                <p class="text-xs text-white/90 italic font-mono bg-black/20 p-2.5 rounded-lg border border-white/10">
+                <p class="text-xs text-slate-200 italic font-mono bg-black/40 p-2.5 rounded-lg border border-white/5">
                   "Oke disepakati arsitektur deployment menggunakan server Sitkrop Infra Coolify dengan target Go-Live tanggal 20 November..."
                 </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-brand-200">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-300"></i>
-                  <span>Terdeteksi sebagai: <strong>Keputusan Resmi Rapat</strong></span>
+                <div class="mt-3 flex items-center gap-2 text-[11px] text-brand-300">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>Terdeteksi: <strong class="text-white">Keputusan Resmi Rapat</strong></span>
                 </div>
               </div>
 
               <!-- Quick Export Pill -->
-              <div class="bg-white p-3 rounded-xl border border-slate-200 flex items-center justify-between text-xs font-semibold text-slate-600">
+              <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/80 flex items-center justify-between text-xs font-semibold text-slate-300">
                 <span>Format Output:</span>
                 <div class="flex gap-1.5">
-                  <span class="px-2 py-1 rounded bg-rose-50 text-rose-700 font-bold border border-rose-200">PDF</span>
-                  <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 font-bold border border-blue-200">DOCX</span>
-                  <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-bold border border-slate-200">MD</span>
+                  <span class="px-2 py-1 rounded bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">PDF</span>
+                  <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">DOCX</span>
+                  <span class="px-2 py-1 rounded bg-slate-700 text-slate-200 font-bold border border-slate-600">MD</span>
                 </div>
               </div>
             </div>
 
-            <!-- Right Column: Auto-Structured Minutes of Meeting Document -->
-            <div class="lg:col-span-8 bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <!-- Right Column -->
+            <div class="lg:col-span-8 bg-slate-900/90 p-5 sm:p-6 rounded-xl border border-slate-700/80 shadow-md flex flex-col justify-between">
               <div>
-                <div class="flex flex-wrap items-center justify-between pb-3 border-b border-slate-200 gap-2">
+                <div class="flex flex-wrap items-center justify-between pb-3 border-b border-slate-800 gap-2">
                   <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                    <h3 class="font-bold text-slate-900 text-base">Minutes of Meeting (MoM) Resmi #MOM-2026-11-04</h3>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    <h3 class="font-bold text-white text-base">Minutes of Meeting (MoM) Resmi #MOM-2026-11-04</h3>
                   </div>
-                  <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
-                    <i data-lucide="clock" class="w-3 h-3"></i> Digenerate otomatis dlm 3.4s
+                  <span class="text-xs bg-slate-800 text-slate-300 border border-slate-700 px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
+                    <i data-lucide="clock" class="w-3 h-3 text-brand-400"></i> Digenerate otomatis dlm 3.4s
                   </span>
                 </div>
 
                 <!-- MoM Sections -->
                 <div class="mt-4 space-y-4 text-xs sm:text-sm">
                   <!-- Executive Summary -->
-                  <div class="bg-slate-50 p-3.5 rounded-lg border-l-4 border-brand-500">
-                    <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                      <i data-lucide="align-left" class="w-3.5 h-3.5 text-brand-600"></i> Ringkasan Eksekutif
+                  <div class="bg-slate-850 p-3.5 rounded-lg border-l-4 border-brand-500 bg-slate-800/60 border border-slate-700/50">
+                    <h5 class="font-bold text-brand-300 text-xs uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                      <i data-lucide="align-left" class="w-3.5 h-3.5 text-brand-400"></i> Ringkasan Eksekutif
                     </h5>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
                       Rapat menyepakati percepatan peluncuran web demo menjadi 20 November 2026. Alokasi resource tim backend difokuskan pada integrasi SSO & API proxy. Semua stakeholder menyetujui alur kerja tanpa revisi mayor.
                     </p>
                   </div>
 
                   <!-- Key Decisions -->
                   <div>
-                    <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-600"></i> Keputusan Kunci Rapat (Decisions Log)
+                    <h5 class="font-bold text-slate-200 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-400"></i> Keputusan Kunci Rapat (Decisions Log)
                     </h5>
-                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700">
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-300">
                       <li class="flex items-start gap-2">
-                        <span class="text-emerald-600 font-bold">✓</span>
-                        <span><strong>Infrastruktur:</strong> Disetujui migrasi penuh ke Coolify VPS internal (Domain *.connect.proxsis.com).</span>
+                        <span class="text-emerald-400 font-bold">✓</span>
+                        <span><strong class="text-white">Infrastruktur:</strong> Disetujui migrasi penuh ke Coolify VPS internal (Domain *.connect.proxsis.com).</span>
                       </li>
                       <li class="flex items-start gap-2">
-                        <span class="text-emerald-600 font-bold">✓</span>
-                        <span><strong>Budget Approval:</strong> Penambahan kapasitas storage cloud disetujui oleh Direktur Operasional.</span>
+                        <span class="text-emerald-400 font-bold">✓</span>
+                        <span><strong class="text-white">Budget Approval:</strong> Penambahan kapasitas storage cloud disetujui oleh Direktur Operasional.</span>
                       </li>
                     </ul>
                   </div>
 
                   <!-- Action Items Table -->
                   <div>
-                    <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <i data-lucide="list-todo" class="w-3.5 h-3.5 text-amber-600"></i> Daftar Tindak Lanjut (Action Items & PIC)
+                    <h5 class="font-bold text-slate-200 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <i data-lucide="list-todo" class="w-3.5 h-3.5 text-amber-400"></i> Daftar Tindak Lanjut (Action Items & PIC)
                     </h5>
-                    <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                    <div class="overflow-x-auto border border-slate-700 rounded-lg">
                       <table class="w-full text-left text-xs">
-                        <thead class="bg-slate-100 text-slate-600 font-bold uppercase text-[10px]">
+                        <thead class="bg-slate-800/90 text-slate-400 font-bold uppercase text-[10px] border-b border-slate-700">
                           <tr>
                             <th class="py-2 px-3">Tugas / Action Item</th>
                             <th class="py-2 px-3">PIC (Penanggung Jawab)</th>
@@ -362,18 +363,18 @@
                             <th class="py-2 px-3">Status</th>
                           </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100">
+                        <tbody class="divide-y divide-slate-800 bg-slate-900/60">
                           <tr>
-                            <td class="py-2 px-3 font-medium text-slate-800">Finalisasi Landing Page Statis</td>
-                            <td class="py-2 px-3 text-slate-600"><span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold text-[11px]">Budi Santoso</span></td>
-                            <td class="py-2 px-3 text-slate-500">14 Nov 2026</td>
-                            <td class="py-2 px-3"><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">In Progress</span></td>
+                            <td class="py-2.5 px-3 font-medium text-white">Finalisasi Landing Page Statis</td>
+                            <td class="py-2.5 px-3 text-slate-300"><span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 font-semibold text-[11px]">Budi Santoso</span></td>
+                            <td class="py-2.5 px-3 text-slate-400 font-mono">14 Nov 2026</td>
+                            <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-[10px]">In Progress</span></td>
                           </tr>
                           <tr>
-                            <td class="py-2 px-3 font-medium text-slate-800">Uji Coba Sinkronisasi Notifikasi WA</td>
-                            <td class="py-2 px-3 text-slate-600"><span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 font-semibold text-[11px]">Rina Amelia</span></td>
-                            <td class="py-2 px-3 text-slate-500">16 Nov 2026</td>
-                            <td class="py-2 px-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">Pending</span></td>
+                            <td class="py-2.5 px-3 font-medium text-white">Uji Coba Sinkronisasi Notifikasi WA</td>
+                            <td class="py-2.5 px-3 text-slate-300"><span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold text-[11px]">Rina Amelia</span></td>
+                            <td class="py-2.5 px-3 text-slate-400 font-mono">16 Nov 2026</td>
+                            <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold text-[10px]">Pending</span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -383,15 +384,15 @@
               </div>
 
               <!-- Footer of Simulated Document -->
-              <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-                <span class="flex items-center gap-1 text-slate-600">
-                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Siap ditandatangani secara digital (E-Signature)
+              <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+                <span class="flex items-center gap-1.5 text-slate-300">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> Siap ditandatangani secara digital (E-Signature)
                 </span>
                 <div class="flex items-center gap-2">
-                  <button onclick="copySampleMoM()" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold flex items-center gap-1 transition-colors">
+                  <button onclick="copySampleMoM()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold flex items-center gap-1 transition-colors">
                     <i data-lucide="copy" class="w-3 h-3"></i> Salin MoM
                   </button>
-                  <button onclick="downloadSamplePDF()" class="px-2.5 py-1 rounded bg-brand-600 hover:bg-brand-700 text-white font-semibold flex items-center gap-1 transition-colors">
+                  <button onclick="downloadSamplePDF()" class="px-2.5 py-1 rounded bg-brand-600 hover:bg-brand-500 text-white font-semibold flex items-center gap-1 shadow-sm transition-colors">
                     <i data-lucide="download" class="w-3 h-3"></i> Download PDF
                   </button>
                 </div>
@@ -400,114 +401,114 @@
           </div>
         </div>
 
-        <!-- Floating Badges for Visual Depth -->
-        <div class="hidden md:flex absolute -top-5 -left-6 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-xl p-3 items-center gap-3 animate-float">
-          <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+        <!-- Floating Badges -->
+        <div class="hidden md:flex absolute -top-5 -left-6 bg-slate-900/95 backdrop-blur-md border border-slate-700 shadow-2xl rounded-xl p-3 items-center gap-3 animate-float">
+          <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold">
             <i data-lucide="check" class="w-5 h-5"></i>
           </div>
           <div>
-            <div class="text-xs font-bold text-slate-900">100% Keputusan Tercatat</div>
-            <div class="text-[11px] text-slate-500">Zero human error notulensi</div>
+            <div class="text-xs font-bold text-white">100% Keputusan Tercatat</div>
+            <div class="text-[11px] text-slate-400">Zero human error notulensi</div>
           </div>
         </div>
 
-        <div class="hidden md:flex absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-xl p-3 items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+        <div class="hidden md:flex absolute -bottom-6 -right-6 bg-slate-900/95 backdrop-blur-md border border-slate-700 shadow-2xl rounded-xl p-3 items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-brand-500/20 text-brand-400 border border-brand-500/30 flex items-center justify-center font-bold">
             <i data-lucide="send" class="w-5 h-5"></i>
           </div>
           <div>
-            <div class="text-xs font-bold text-slate-900">Kirim Otomatis ke WhatsApp</div>
-            <div class="text-[11px] text-slate-500">Semua PIC langsung dapat ringkasan</div>
+            <div class="text-xs font-bold text-white">Kirim Otomatis ke WhatsApp</div>
+            <div class="text-[11px] text-slate-400">Semua PIC langsung dapat ringkasan</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== LOGO CLOUD / TRUSTED BY ==================== -->
-  <section class="py-12 bg-white border-y border-slate-200/80">
+  <!-- ==================== LOGO CLOUD (DARK) ==================== -->
+  <section class="py-12 bg-[#090d16] border-y border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-6">
+      <p class="text-xs uppercase tracking-wider font-bold text-slate-500 mb-6">
         Dipercaya oleh 500+ Perusahaan, Konsultan Manajemen, Startup & Institusi di Indonesia
       </p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-        <div class="font-extrabold text-slate-600 tracking-tight text-lg">PROXSIS<span class="text-brand-600">.</span></div>
-        <div class="font-black text-slate-600 tracking-wider text-base">TELKOM<span class="text-rose-500">IND</span></div>
-        <div class="font-bold text-slate-600 text-base">KONSULTAMA</div>
-        <div class="font-extrabold text-slate-600 tracking-tight text-base">SINAR<span class="text-amber-500">TECH</span></div>
-        <div class="font-bold text-slate-600 text-base">NUSANTARA.AI</div>
-        <div class="font-black text-slate-600 text-base">BANK<span class="text-brand-500">DIGITAL</span></div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center opacity-60 hover:opacity-100 transition-all duration-300">
+        <div class="font-extrabold text-slate-300 tracking-tight text-lg">PROXSIS<span class="text-brand-500">.</span></div>
+        <div class="font-black text-slate-300 tracking-wider text-base">TELKOM<span class="text-rose-500">IND</span></div>
+        <div class="font-bold text-slate-300 text-base">KONSULTAMA</div>
+        <div class="font-extrabold text-slate-300 tracking-tight text-base">SINAR<span class="text-amber-400">TECH</span></div>
+        <div class="font-bold text-slate-300 text-base">NUSANTARA.AI</div>
+        <div class="font-black text-slate-300 text-base">BANK<span class="text-brand-400">DIGITAL</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== BEFORE VS AFTER (PROBLEM & SOLUTION) ==================== -->
-  <section class="py-20 bg-slate-50">
+  <!-- ==================== BEFORE VS AFTER (DARK) ==================== -->
+  <section class="py-20 bg-[#0b0f19]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Transformasi Rapat Anda</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Kenapa Masih Mencatat Notulensi Rapat Secara Manual?</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Transformasi Rapat Anda</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Kenapa Masih Mencatat Notulensi Rapat Secara Manual?</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <!-- Before: Manual Pain -->
-        <div class="bg-rose-50/70 border-2 border-rose-200/80 rounded-2xl p-6 sm:p-8">
+        <div class="bg-rose-950/20 border border-rose-900/60 rounded-2xl p-6 sm:p-8 backdrop-blur-md">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold">
+            <div class="w-10 h-10 rounded-xl bg-rose-600/30 text-rose-300 border border-rose-500/30 flex items-center justify-center font-bold">
               <i data-lucide="x" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="font-extrabold text-rose-950 text-lg">Cara Lama (Manual & Melelahkan)</h3>
-              <p class="text-xs text-rose-700">Notulensi lambat, tugas sering terlupakan</p>
+              <h3 class="font-extrabold text-rose-300 text-lg">Cara Lama (Manual & Melelahkan)</h3>
+              <p class="text-xs text-rose-400/80">Notulensi lambat, tugas sering terlupakan</p>
             </div>
           </div>
-          <ul class="space-y-4 text-sm text-rose-900">
+          <ul class="space-y-4 text-sm text-slate-300">
             <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold mt-0.5">✕</span>
+              <span class="text-rose-400 font-bold mt-0.5">✕</span>
               <span>Notulis panik mengetik manual, tidak bisa fokus mengikuti substansi diskusi rapat.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold mt-0.5">✕</span>
+              <span class="text-rose-400 font-bold mt-0.5">✕</span>
               <span>MoM baru selesai dikirim 2–3 hari setelah rapat, seringkali audiens sudah lupa konteksnya.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold mt-0.5">✕</span>
+              <span class="text-rose-400 font-bold mt-0.5">✕</span>
               <span>Action Items dan PIC tidak jelas; tidak ada pelacakan siapa mengerjakan apa sampai deadline lewat.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold mt-0.5">✕</span>
+              <span class="text-rose-400 font-bold mt-0.5">✕</span>
               <span>Catatan tersebar di Google Docs, chat WA, atau buku catatan fisik dan sulit dicari kembali.</span>
             </li>
           </ul>
         </div>
 
         <!-- After: NotulaMoM AI -->
-        <div class="bg-emerald-50/70 border-2 border-emerald-300 rounded-2xl p-6 sm:p-8 shadow-lg shadow-emerald-500/5 relative overflow-hidden">
-          <div class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-200/40 rounded-full blur-xl pointer-events-none"></div>
+        <div class="bg-emerald-950/20 border border-emerald-700/60 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl shadow-emerald-950/30 relative overflow-hidden">
+          <div class="absolute -right-4 -top-4 w-28 h-28 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-600/30">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 flex items-center justify-center font-bold">
               <i data-lucide="check" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="font-extrabold text-emerald-950 text-lg">Dengan NotulaMoM (Serba Otomatis)</h3>
-              <p class="text-xs text-emerald-700">Notulensi selesai saat rapat ditutup</p>
+              <h3 class="font-extrabold text-emerald-300 text-lg">Dengan NotulaMoM (Serba Otomatis)</h3>
+              <p class="text-xs text-emerald-400/80">Notulensi selesai saat rapat ditutup</p>
             </div>
           </div>
-          <ul class="space-y-4 text-sm text-emerald-950">
+          <ul class="space-y-4 text-sm text-slate-200">
             <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+              <span class="text-emerald-400 font-bold mt-0.5">✓</span>
               <span>Semua peserta fokus 100% berdiskusi; AI mendengarkan dan merekam seluruh poin penting secara objektif.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+              <span class="text-emerald-400 font-bold mt-0.5">✓</span>
               <span>MoM terstruktur resmi (PDF/Word) langsung terbit dalam hitungan detik setelah rapat selesai.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+              <span class="text-emerald-400 font-bold mt-0.5">✓</span>
               <span>PIC & deadline otomatis dipetakan, disinkronkan ke WhatsApp, Trello, Jira, & Google Calendar.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+              <span class="text-emerald-400 font-bold mt-0.5">✓</span>
               <span>Pusat arsip cerdas (Semantic Search): cari "keputusan vendor AC tahun lalu" ditemukan dalam 1 detik.</span>
             </li>
           </ul>
@@ -516,78 +517,78 @@
     </div>
   </section>
 
-  <!-- ==================== FITUR UNGGULAN ==================== -->
-  <section id="fitur" class="py-20 bg-white">
+  <!-- ==================== FITUR UNGGULAN (DARK) ==================== -->
+  <section id="fitur" class="py-20 bg-[#0e1424] border-t border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Fitur Dirancang Khusus untuk Korporat & Profesional</h2>
-        <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Segala yang Anda Butuhkan untuk Notulensi Rapat Sempurna</p>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base">Mulai dari rapat internal harian hingga Rapat Umum Pemegang Saham (RUPS) yang membutuhkan keabsahan tinggi.</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Fitur Dirancang Khusus untuk Korporat & Profesional</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Segala yang Anda Butuhkan untuk Notulensi Rapat Sempurna</p>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">Mulai dari rapat internal harian hingga Rapat Umum Pemegang Saham (RUPS) yang membutuhkan keabsahan tinggi.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature 1 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-500/50 hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-brand-500/50 hover:shadow-xl hover:shadow-brand-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 border border-brand-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="bot" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">AI Smart Meeting Summarizer</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">AI Smart Meeting Summarizer</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             Meringkas rapat 2 jam menjadi 1 halaman intisari penting: Latar belakang agenda, ringkasan pembahasan, kesepakatan final, dan langkah berikutnya.
           </p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="check-square" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Auto PIC & Action Item Extractor</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">Auto PIC & Action Item Extractor</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             AI mengenali kalimat penugasan ("Budi tolong kirim invoice sebelum Jumat") dan langsung menjadikannya tabel PIC lengkap dengan deadline.
           </p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="file-signature" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Multi-tier Approval & E-Signature</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">Multi-tier Approval & E-Signature</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             Alur tanda tangan notulensi berjenjang dari Notulis, Pimpinan Rapat, hingga Stakeholder Kunci. Dilengkapi jejak audit (audit trail) sah.
           </p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="languages" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Bilingual & Slang Handling</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">Bilingual & Slang Handling</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             Fasih memahami campuran Bahasa Indonesia formal, istilah bisnis corporate ("follow-up", "ASAP", "bottleneck"), hingga bahasa daerah umum.
           </p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-rose-500/50 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-rose-500/50 hover:shadow-xl hover:shadow-rose-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="shield-lock" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Keamanan Standar Perbankan</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">Keamanan Standar Perbankan</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             Enkripsi AES-256 saat data transit & istirahat. Opsi deployment On-Premise / Private Cloud (Proxsis Connect) untuk kerahasiaan data 100%.
           </p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
             <i data-lucide="search" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Pencarian Semantik (Knowledge Base)</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-white mb-2">Pencarian Semantik (Knowledge Base)</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
             Semua rapat terindeks. Anda dapat bertanya seperti ke asisten pribadi: "Berapa target omset yang disetujui Pak Bambang di rapat bulan lalu?"
           </p>
         </div>
@@ -595,53 +596,53 @@
     </div>
   </section>
 
-  <!-- ==================== CARA KERJA (HOW IT WORKS) ==================== -->
-  <section id="cara-kerja" class="py-20 bg-slate-100/60 border-y border-slate-200/70">
+  <!-- ==================== CARA KERJA (DARK) ==================== -->
+  <section id="cara-kerja" class="py-20 bg-[#090d16] border-y border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Sangat Mudah & Praktis</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Hanya 3 Langkah untuk Menghasilkan MoM Profesional</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Sangat Mudah & Praktis</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Hanya 3 Langkah untuk Menghasilkan MoM Profesional</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
         <!-- Step 1 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm relative z-10 flex flex-col items-start">
-          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md shadow-brand-600/30">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl relative z-10 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-lg shadow-brand-600/30">
             1
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Hubungkan Rapat Anda</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 class="text-lg font-bold text-white mb-2">Hubungkan Rapat Anda</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
             Undang bot NotulaMoM ke link Zoom / Google Meet / Teams, atau cukup upload rekaman audio (MP3/WAV/M4A) rapat offline Anda.
           </p>
-          <div class="mt-auto w-full pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-brand-600 font-semibold">
+          <div class="mt-auto w-full pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-brand-400 font-semibold">
             <i data-lucide="link" class="w-4 h-4"></i> Integrasi Sekali Klik
           </div>
         </div>
 
         <!-- Step 2 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm relative z-10 flex flex-col items-start">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md shadow-indigo-600/30">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl relative z-10 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-lg shadow-indigo-600/30">
             2
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">AI Menyusun Notulensi</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 class="text-lg font-bold text-white mb-2">AI Menyusun Notulensi</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
             Engine kecerdasan buatan menyaring obrolan santai dan mengekstrak agenda utama, poin perdebatan, keputusan final, serta tabel tugas PIC.
           </p>
-          <div class="mt-auto w-full pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-indigo-600 font-semibold">
+          <div class="mt-auto w-full pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-indigo-400 font-semibold">
             <i data-lucide="cpu" class="w-4 h-4"></i> Pemrosesan Cepat < 30 Detik
           </div>
         </div>
 
         <!-- Step 3 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm relative z-10 flex flex-col items-start">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md shadow-emerald-600/30">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl relative z-10 flex flex-col items-start">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-lg shadow-emerald-600/30">
             3
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Review & Distribusi Otomatis</h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+          <h3 class="text-lg font-bold text-white mb-2">Review & Distribusi Otomatis</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
             Tinjau draft secara kolaboratif, minta tanda tangan digital ketua rapat, lalu kirim ke WhatsApp / Email seluruh peserta sekaligus.
           </p>
-          <div class="mt-auto w-full pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-600 font-semibold">
+          <div class="mt-auto w-full pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-emerald-400 font-semibold">
             <i data-lucide="send" class="w-4 h-4"></i> Export PDF Resmi & WA Blast
           </div>
         </div>
@@ -649,72 +650,72 @@
     </div>
   </section>
 
-  <!-- ==================== LIVE INTERACTIVE DEMO (MOM PRESET SWITCHER) ==================== -->
-  <section id="demo-preview" class="py-20 bg-white">
+  <!-- ==================== LIVE INTERACTIVE DEMO (DARK) ==================== -->
+  <section id="demo-preview" class="py-20 bg-[#0b0f19]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold mb-3">
           <i data-lucide="mouse-pointer" class="w-3.5 h-3.5"></i> Coba Interaktif Langsung
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Simulasi Format Notulensi Sesuai Jenis Rapat Anda</h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base">Pilih jenis rapat di bawah ini untuk melihat contoh Minutes of Meeting yang dihasilkan oleh NotulaMoM.</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Simulasi Format Notulensi Sesuai Jenis Rapat Anda</h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">Pilih jenis rapat di bawah ini untuk melihat contoh Minutes of Meeting yang dihasilkan oleh NotulaMoM.</p>
       </div>
 
       <!-- Presets Tabs Navigation -->
       <div class="flex items-center justify-center gap-2 sm:gap-4 overflow-x-auto pb-4 no-scrollbar max-w-3xl mx-auto" id="preset-buttons">
-        <button onclick="switchPreset('sprint')" class="preset-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-brand-600 text-white border-brand-600 shadow-md shadow-brand-600/20" data-preset="sprint">
+        <button onclick="switchPreset('sprint')" class="preset-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-brand-600 text-white border-brand-500 shadow-md shadow-brand-600/30" data-preset="sprint">
           💻 Weekly Sprint / IT
         </button>
-        <button onclick="switchPreset('bod')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200" data-preset="bod">
+        <button onclick="switchPreset('bod')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800" data-preset="bod">
           👔 Rapat Direksi (BOD)
         </button>
-        <button onclick="switchPreset('client')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200" data-preset="client">
+        <button onclick="switchPreset('client')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800" data-preset="client">
           🤝 Client Kickoff Project
         </button>
-        <button onclick="switchPreset('general')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200" data-preset="general">
+        <button onclick="switchPreset('general')" class="preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800" data-preset="general">
           📢 Townhall / Umum
         </button>
       </div>
 
-      <!-- Preset Content Card -->
-      <div class="mt-8 max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+      <!-- Preset Content Card (Dark) -->
+      <div class="mt-8 max-w-4xl mx-auto bg-slate-900/90 border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md">
         <!-- Interactive Toolbar -->
-        <div class="bg-white border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+        <div class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div class="flex items-center gap-3">
-            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
             <div>
-              <h4 id="demo-title" class="font-extrabold text-slate-900 text-base">Weekly Engineering Sprint #42</h4>
-              <p id="demo-meta" class="text-xs text-slate-500">Durasi: 45 Menit • 6 Peserta • Status: Disetujui</p>
+              <h4 id="demo-title" class="font-extrabold text-white text-base">Weekly Engineering Sprint #42</h4>
+              <p id="demo-meta" class="text-xs text-slate-400">Durasi: 45 Menit • 6 Peserta • Status: Disetujui</p>
             </div>
           </div>
           <div class="flex items-center gap-2">
-            <button onclick="copyCurrentPreset()" class="px-3.5 py-1.5 rounded-lg border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-100 flex items-center gap-1.5 transition-colors">
+            <button onclick="copyCurrentPreset()" class="px-3.5 py-1.5 rounded-lg border border-slate-700 text-slate-200 font-semibold text-xs hover:bg-slate-800 flex items-center gap-1.5 transition-colors">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span id="copy-btn-text">Salin Teks MoM</span>
             </button>
-            <button onclick="downloadSamplePDF()" class="px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors">
+            <button onclick="downloadSamplePDF()" class="px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors">
               <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Download PDF
             </button>
           </div>
         </div>
 
-        <!-- Dynamic Content Body -->
-        <div id="preset-content" class="p-6 sm:p-8 space-y-6 bg-white/60">
+        <!-- Dynamic Content Body (Dark Styled via app.js) -->
+        <div id="preset-content" class="p-6 sm:p-8 space-y-6 bg-slate-900/60">
           <!-- Populated by JavaScript -->
         </div>
 
         <!-- Demo Footer Info -->
-        <div class="bg-slate-100/80 px-6 py-3 border-t border-slate-200 flex flex-wrap items-center justify-between text-xs text-slate-500">
+        <div class="bg-slate-950 px-6 py-3 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400">
           <span>💡 Tip: AI NotulaMoM secara otomatis memisahkan agenda, keputusan mengikat, dan daftar penugasan.</span>
-          <a href="#harga" class="text-brand-600 font-bold hover:underline">Gunakan template ini untuk tim Anda &rarr;</a>
+          <a href="#harga" class="text-brand-400 font-bold hover:underline">Gunakan template ini untuk tim Anda &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== ROI / PENGHEMATAN WAKTU KALKULATOR ==================== -->
-  <section id="roi-calculator" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,141,233,0.3),rgba(255,255,255,0))]"></div>
+  <!-- ==================== ROI KALKULATOR (DARK) ==================== -->
+  <section id="roi-calculator" class="py-20 bg-[#090d16] border-y border-slate-800/80 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(14,141,233,0.25),rgba(255,255,255,0))]"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-14">
@@ -723,7 +724,7 @@
         <p class="mt-3 text-slate-400 text-sm sm:text-base">Waktu yang dihabiskan untuk mencatat dan merapikan notulensi rapat bernilai mahal bagi produktivitas tim Anda.</p>
       </div>
 
-      <div class="max-w-4xl mx-auto bg-slate-800/80 border border-slate-700 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="max-w-4xl mx-auto bg-slate-900/90 border border-slate-700/80 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <!-- Sliders Column -->
         <div class="lg:col-span-7 space-y-6">
           <div>
@@ -731,7 +732,7 @@
               <span class="text-slate-300">Jumlah Rapat per Minggu</span>
               <span class="text-brand-400 font-extrabold text-base" id="meetings-val">8 Rapat</span>
             </div>
-            <input type="range" id="meetings-slider" min="1" max="40" value="8" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+            <input type="range" id="meetings-slider" min="1" max="40" value="8" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
             <div class="flex justify-between text-[11px] text-slate-500 mt-1">
               <span>1 rapat</span>
               <span>20 rapat</span>
@@ -744,7 +745,7 @@
               <span class="text-slate-300">Rata-rata Peserta per Rapat</span>
               <span class="text-brand-400 font-extrabold text-base" id="attendees-val">6 Orang</span>
             </div>
-            <input type="range" id="attendees-slider" min="2" max="30" value="6" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+            <input type="range" id="attendees-slider" min="2" max="30" value="6" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
             <div class="flex justify-between text-[11px] text-slate-500 mt-1">
               <span>2 orang</span>
               <span>15 orang</span>
@@ -757,7 +758,7 @@
               <span class="text-slate-300">Estimasi Biaya Waktu Tim (per jam / orang)</span>
               <span class="text-brand-400 font-extrabold text-base" id="rate-val">Rp 120.000 / jam</span>
             </div>
-            <input type="range" id="rate-slider" min="50000" max="400000" step="10000" value="120000" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+            <input type="range" id="rate-slider" min="50000" max="400000" step="10000" value="120000" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
             <div class="flex justify-between text-[11px] text-slate-500 mt-1">
               <span>Rp 50.000</span>
               <span>Rp 200.000</span>
@@ -767,20 +768,20 @@
         </div>
 
         <!-- Result Box Column -->
-        <div class="lg:col-span-5 bg-gradient-to-br from-brand-900/90 to-indigo-950/90 border border-brand-500/40 rounded-2xl p-6 text-center space-y-6">
+        <div class="lg:col-span-5 bg-gradient-to-br from-brand-950 via-slate-900 to-indigo-950 border border-brand-500/40 rounded-2xl p-6 text-center space-y-6 shadow-xl">
           <div>
             <span class="text-xs uppercase tracking-wider text-brand-300 font-bold block mb-1">Total Waktu Dihemat</span>
             <div class="text-4xl sm:text-5xl font-black text-white" id="hours-saved">48 Jam</div>
             <span class="text-xs text-slate-400">setiap bulan kerja</span>
           </div>
 
-          <div class="pt-4 border-t border-brand-500/20">
+          <div class="pt-4 border-t border-brand-500/30">
             <span class="text-xs uppercase tracking-wider text-emerald-400 font-bold block mb-1">Perkiraan Efisiensi Biaya</span>
             <div class="text-2xl sm:text-3xl font-extrabold text-emerald-300" id="money-saved">Rp 5.760.000</div>
             <span class="text-xs text-slate-400">penghematan produktivitas / bln</span>
           </div>
 
-          <button onclick="openDemoModal('Klaim Penghematan')" class="w-full py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm shadow-lg shadow-brand-500/30 transition-all">
+          <button onclick="openDemoModal('Klaim Penghematan')" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-600/30 transition-all">
             Mulai Hemat Waktu Sekarang &rarr;
           </button>
         </div>
@@ -788,84 +789,84 @@
     </div>
   </section>
 
-  <!-- ==================== INTEGRATIONS ==================== -->
-  <section class="py-20 bg-white">
+  <!-- ==================== INTEGRATIONS (DARK) ==================== -->
+  <section class="py-20 bg-[#0b0f19]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Ekosistem & Kompatibilitas</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Terhubung Mulus dengan Alat Kerja Harian Anda</p>
-        <p class="mt-2 text-slate-600 text-sm">Tidak perlu mengganti workflow yang sudah berjalan di kantor Anda.</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Ekosistem & Kompatibilitas</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Terhubung Mulus dengan Alat Kerja Harian Anda</p>
+        <p class="mt-2 text-slate-400 text-sm">Tidak perlu mengganti workflow yang sudah berjalan di kantor Anda.</p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
         <!-- App 1: Zoom -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-blue-500/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-brand-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-blue-500/30">
             <i data-lucide="video" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">Zoom</span>
-          <span class="text-[11px] text-slate-500">Auto Recording</span>
+          <span class="font-bold text-white text-sm">Zoom</span>
+          <span class="text-[11px] text-slate-400">Auto Recording</span>
         </div>
 
         <!-- App 2: Google Meet -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-emerald-600/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-emerald-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-emerald-500/30">
             <i data-lucide="users" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">Google Meet</span>
-          <span class="text-[11px] text-slate-500">G-Suite Ready</span>
+          <span class="font-bold text-white text-sm">Google Meet</span>
+          <span class="text-[11px] text-slate-400">G-Suite Ready</span>
         </div>
 
         <!-- App 3: Microsoft Teams -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-indigo-600/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-indigo-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-indigo-500/30">
             <i data-lucide="presentation" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">MS Teams</span>
-          <span class="text-[11px] text-slate-500">Office 365 Sync</span>
+          <span class="font-bold text-white text-sm">MS Teams</span>
+          <span class="text-[11px] text-slate-400">Office 365 Sync</span>
         </div>
 
         <!-- App 4: WhatsApp -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-green-500 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-green-500/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-green-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-green-500/30">
             <i data-lucide="message-square" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">WhatsApp</span>
-          <span class="text-[11px] text-slate-500">PIC Blast Alert</span>
+          <span class="font-bold text-white text-sm">WhatsApp</span>
+          <span class="text-[11px] text-slate-400">PIC Blast Alert</span>
         </div>
 
         <!-- App 5: Trello & Jira -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-blue-600/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-blue-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-blue-600/30">
             <i data-lucide="trello" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">Jira & Trello</span>
-          <span class="text-[11px] text-slate-500">Auto Task Creation</span>
+          <span class="font-bold text-white text-sm">Jira & Trello</span>
+          <span class="text-[11px] text-slate-400">Auto Task Creation</span>
         </div>
 
         <!-- App 6: Notion & Slack -->
-        <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:shadow-lg transition-all text-center flex flex-col items-center justify-center">
-          <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-slate-900/20">
+        <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-purple-500/40 hover:bg-slate-850 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+          <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-lg mb-3 shadow-md shadow-purple-600/30">
             <i data-lucide="folder-git-2" class="w-6 h-6"></i>
           </div>
-          <span class="font-bold text-slate-800 text-sm">Notion & Slack</span>
-          <span class="text-[11px] text-slate-500">Knowledge Base</span>
+          <span class="font-bold text-white text-sm">Notion & Slack</span>
+          <span class="text-[11px] text-slate-400">Knowledge Base</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== TESTIMONIALS ==================== -->
-  <section class="py-20 bg-slate-50 border-t border-slate-200/80">
+  <!-- ==================== TESTIMONIALS (DARK) ==================== -->
+  <section class="py-20 bg-[#0e1424] border-t border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Kisah Sukses Pengguna</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Apa Kata Tim yang Sudah Bebas dari Beban Notulensi Manual?</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Kisah Sukses Pengguna</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Apa Kata Tim yang Sudah Bebas dari Beban Notulensi Manual?</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Testi 1 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4">
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -874,23 +875,23 @@
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
-            <p class="text-sm text-slate-700 italic leading-relaxed mb-6">
+            <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
               "Sebelumnya corporate secretary kami butuh waktu seharian buat ngetik dan verifikasi notulensi RUPS atau rapat direksi. Dengan NotulaMoM, begitu rapat bubar, draft PDF sudah siap di-review. Menghemat setidaknya 15 jam per minggu!"
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
             <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
               DA
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">Dian Anggraini</h4>
-              <p class="text-xs text-slate-500">Corporate Secretary di Holding Group</p>
+              <h4 class="font-bold text-white text-sm">Dian Anggraini</h4>
+              <p class="text-xs text-slate-400">Corporate Secretary di Holding Group</p>
             </div>
           </div>
         </div>
 
         <!-- Testi 2 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4">
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -899,23 +900,23 @@
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
-            <p class="text-sm text-slate-700 italic leading-relaxed mb-6">
+            <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
               "Fitur PIC Action Items adalah penyelamat terbesar project kami. Seringkali setelah meeting klien kita lupa siapa yang janji kirim dokumen. NotulaMoM otomatis nangkep dan kirim WhatsApp alert ke PIC. Akuntabilitas tim naik 200%!"
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
             <div class="w-10 h-10 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm">
               FW
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">Fahri Wicaksono</h4>
-              <p class="text-xs text-slate-500">Senior Project Manager Consulting</p>
+              <h4 class="font-bold text-white text-sm">Fahri Wicaksono</h4>
+              <p class="text-xs text-slate-400">Senior Project Manager Consulting</p>
             </div>
           </div>
         </div>
 
         <!-- Testi 3 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-slate-900/90 p-7 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between">
           <div>
             <div class="flex text-amber-400 mb-4">
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
@@ -924,17 +925,17 @@
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
               <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
-            <p class="text-sm text-slate-700 italic leading-relaxed mb-6">
+            <p class="text-sm text-slate-300 italic leading-relaxed mb-6">
               "Awalnya ragu dengan akurasi Bahasa Indonesianya, ternyata sangat fasih bahkan untuk istilah teknis IT dan bahasa campur Indo-Inggris. Fitur e-signature-nya bikin persetujuan MoM jadi formal dan rapi tanpa print kertas."
             </p>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
             <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
               SN
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">Siti Nurhaliza</h4>
-              <p class="text-xs text-slate-500">Head of Operations Tech Startup</p>
+              <h4 class="font-bold text-white text-sm">Siti Nurhaliza</h4>
+              <p class="text-xs text-slate-400">Head of Operations Tech Startup</p>
             </div>
           </div>
         </div>
@@ -942,165 +943,165 @@
     </div>
   </section>
 
-  <!-- ==================== PRICING ==================== -->
-  <section id="harga" class="py-20 bg-white">
+  <!-- ==================== PRICING (DARK) ==================== -->
+  <section id="harga" class="py-20 bg-[#0b0f19]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Paket Harga Fleksibel & Transparan</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Investasi Cerdas untuk Produktivitas Rapat</p>
-        <p class="mt-2 text-slate-600 text-sm">Bisa mulai dari uji coba gratis tanpa resiko.</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Paket Harga Fleksibel & Transparan</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Investasi Cerdas untuk Produktivitas Rapat</p>
+        <p class="mt-2 text-slate-400 text-sm">Bisa mulai dari uji coba gratis tanpa risiko.</p>
 
         <!-- Billing Cycle Toggle -->
-        <div class="mt-8 inline-flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
-          <button id="billing-monthly" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-sm">
+        <div class="mt-8 inline-flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800">
+          <button id="billing-monthly" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-slate-800 text-white shadow-sm">
             Tagihan Bulanan
           </button>
-          <button id="billing-annual" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
+          <button id="billing-annual" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5">
             <span>Tagihan Tahunan</span>
-            <span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-0.5 rounded-full font-extrabold">Hemat 20%</span>
+            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] px-2 py-0.5 rounded-full font-extrabold">Hemat 20%</span>
           </button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
         <!-- Plan 1: Starter -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+        <div class="bg-slate-900/90 rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition-all">
           <div>
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-extrabold text-slate-900 text-xl">Starter</h3>
-              <span class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">Untuk Individu</span>
+              <h3 class="font-extrabold text-white text-xl">Starter</h3>
+              <span class="text-xs font-bold px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Untuk Individu</span>
             </div>
-            <p class="text-xs text-slate-500 mb-6">Cocok untuk freelancer, konsultan independen, atau notulis personal.</p>
+            <p class="text-xs text-slate-400 mb-6">Cocok untuk freelancer, konsultan independen, atau notulis personal.</p>
             
             <div class="mb-6">
-              <span class="text-4xl font-extrabold text-slate-900" id="price-starter">Rp 0</span>
-              <span class="text-xs text-slate-500">/ selamanya</span>
+              <span class="text-4xl font-extrabold text-white" id="price-starter">Rp 0</span>
+              <span class="text-xs text-slate-400">/ selamanya</span>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-700 border-t border-slate-100 pt-6">
+            <ul class="space-y-3.5 text-xs text-slate-300 border-t border-slate-800 pt-6">
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Hingga 5 Rapat per Bulan</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Maks. 30 Menit per Sesi Rapat</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Ringkasan AI & Action Items Dasar</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Export PDF Standar</span>
               </li>
-              <li class="flex items-center gap-2 text-slate-400">
-                <i data-lucide="x" class="w-4 h-4 text-slate-300"></i>
+              <li class="flex items-center gap-2 text-slate-500">
+                <i data-lucide="x" class="w-4 h-4 text-slate-600"></i>
                 <span>Tanpa E-Signature & Multi-tier</span>
               </li>
             </ul>
           </div>
 
           <div class="pt-8">
-            <button onclick="openDemoModal('Starter Gratis')" class="w-full py-3 rounded-xl border-2 border-slate-300 hover:border-slate-400 text-slate-800 font-bold text-sm transition-colors">
+            <button onclick="openDemoModal('Starter Gratis')" class="w-full py-3 rounded-xl border border-slate-700 hover:border-slate-600 text-slate-200 hover:bg-slate-800 font-bold text-sm transition-colors">
               Mulai Gratis
             </button>
           </div>
         </div>
 
         <!-- Plan 2: Pro Team (Featured) -->
-        <div class="bg-gradient-to-b from-brand-50/50 via-white to-white rounded-3xl p-8 border-2 border-brand-500 shadow-xl shadow-brand-500/10 flex flex-col justify-between relative">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-indigo-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+        <div class="bg-gradient-to-b from-brand-950/40 via-slate-900 to-slate-900 rounded-3xl p-8 border-2 border-brand-500 shadow-2xl shadow-brand-500/20 flex flex-col justify-between relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-indigo-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
             Paling Populer & Dianjurkan
           </div>
 
           <div>
             <div class="flex justify-between items-center mb-4 mt-2">
-              <h3 class="font-extrabold text-slate-900 text-xl">Pro Team</h3>
-              <span class="text-xs font-bold px-2.5 py-1 bg-brand-100 text-brand-700 rounded-full">Tim & Dept</span>
+              <h3 class="font-extrabold text-white text-xl">Pro Team</h3>
+              <span class="text-xs font-bold px-2.5 py-1 bg-brand-500/20 text-brand-300 border border-brand-500/30 rounded-full">Tim & Dept</span>
             </div>
-            <p class="text-xs text-slate-500 mb-6">Untuk tim proyek, sekretariat korporat, dan departemen manajemen aktif.</p>
+            <p class="text-xs text-slate-400 mb-6">Untuk tim proyek, sekretariat korporat, dan departemen manajemen aktif.</p>
             
             <div class="mb-6">
-              <span class="text-4xl font-extrabold text-slate-900" id="price-pro">Rp 199.000</span>
-              <span class="text-xs text-slate-500" id="period-pro">/ user / bln</span>
+              <span class="text-4xl font-extrabold text-white" id="price-pro">Rp 199.000</span>
+              <span class="text-xs text-slate-400" id="period-pro">/ user / bln</span>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-700 border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-2 font-semibold text-slate-900">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600"></i>
+            <ul class="space-y-3.5 text-xs text-slate-300 border-t border-slate-800 pt-6">
+              <li class="flex items-center gap-2 font-semibold text-white">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400"></i>
                 <span>Unlimited Sesi Rapat</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Durasi hingga 180 Menit per Rapat</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Integrasi Zoom, GMeet, Teams, WA Blast</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>E-Signature & Approval Workflow Resmi</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Export PDF Kustom Logo Perusahaan</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Pencarian Cerdas Semantic Database</span>
               </li>
             </ul>
           </div>
 
           <div class="pt-8">
-            <button onclick="openDemoModal('Pro Team 14 Hari')" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/25 transition-all">
+            <button onclick="openDemoModal('Pro Team 14 Hari')" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-xl shadow-brand-600/30 transition-all">
               Coba Gratis 14 Hari
             </button>
           </div>
         </div>
 
         <!-- Plan 3: Enterprise -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+        <div class="bg-slate-900/90 rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition-all">
           <div>
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-extrabold text-slate-900 text-xl">Enterprise</h3>
-              <span class="text-xs font-bold px-2.5 py-1 bg-slate-900 text-white rounded-full">Custom / On-Premise</span>
+              <h3 class="font-extrabold text-white text-xl">Enterprise</h3>
+              <span class="text-xs font-bold px-2.5 py-1 bg-slate-800 text-slate-300 rounded-full border border-slate-700">Custom / On-Premise</span>
             </div>
-            <p class="text-xs text-slate-500 mb-6">Untuk BUMN, perbankan, dan institusi dengan regulasi keamanan ketat.</p>
+            <p class="text-xs text-slate-400 mb-6">Untuk BUMN, perbankan, dan institusi dengan regulasi keamanan ketat.</p>
             
             <div class="mb-6">
-              <span class="text-3xl font-extrabold text-slate-900">Hubungi Kami</span>
-              <span class="block text-xs text-slate-500 mt-1">Sesuai kebutuhan server & user</span>
+              <span class="text-3xl font-extrabold text-white">Hubungi Kami</span>
+              <span class="block text-xs text-slate-400 mt-1">Sesuai kebutuhan server & user</span>
             </div>
 
-            <ul class="space-y-3.5 text-xs text-slate-700 border-t border-slate-100 pt-6">
-              <li class="flex items-center gap-2 font-semibold text-slate-900">
-                <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
+            <ul class="space-y-3.5 text-xs text-slate-300 border-t border-slate-800 pt-6">
+              <li class="flex items-center gap-2 font-semibold text-white">
+                <i data-lucide="shield-check" class="w-4 h-4 text-indigo-400"></i>
                 <span>On-Premise / Private Cloud Deploy</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>SLA Uptime 99.9% & Dedicated Support</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Integrasi Single Sign-On (SSO & SAML)</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Kustomisasi Format MoM Standar Perusahaan</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
                 <span>Non-Disclosure Agreement (NDA) Formal</span>
               </li>
             </ul>
           </div>
 
           <div class="pt-8">
-            <button onclick="openDemoModal('Enterprise Konsultasi')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors">
+            <button onclick="openDemoModal('Enterprise Konsultasi')" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm transition-colors">
               Jadwalkan Diskusi Teknis
             </button>
           </div>
@@ -1109,66 +1110,66 @@
     </div>
   </section>
 
-  <!-- ==================== FAQ ACCORDION ==================== -->
-  <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200/80">
+  <!-- ==================== FAQ ACCORDION (DARK) ==================== -->
+  <section id="faq" class="py-20 bg-[#0e1424] border-t border-slate-800/80">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
-        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-600 mb-2">Pertanyaan Populer</h2>
-        <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Frequently Asked Questions (FAQ)</p>
+        <h2 class="text-xs uppercase tracking-wider font-extrabold text-brand-400 mb-2">Pertanyaan Populer</h2>
+        <p class="text-3xl font-extrabold text-white tracking-tight">Frequently Asked Questions (FAQ)</p>
       </div>
 
       <div class="space-y-4" id="faq-accordion">
         <!-- FAQ 1 -->
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center gap-4 hover:bg-slate-800/50 transition-colors" onclick="toggleFaq(this)">
             <span>Bagaimana cara NotulaMoM bergabung ke meeting kami?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
           </button>
-          <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+          <div class="px-6 pb-5 text-slate-400 text-sm leading-relaxed hidden">
             Anda cukup mengundang bot asisten kami menggunakan tautan Zoom, Google Meet, atau Microsoft Teams. NotulaMoM akan masuk sebagai partisipan resmi, merekam audio secara aman, dan langsung menyajikan hasil olahan begitu rapat selesai. Untuk rapat offline, Anda bisa mengunggah file rekaman voice recorder ponsel.
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center gap-4 hover:bg-slate-800/50 transition-colors" onclick="toggleFaq(this)">
             <span>Apakah data pembicaraan rapat kami aman dan tidak bocor?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
           </button>
-          <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+          <div class="px-6 pb-5 text-slate-400 text-sm leading-relaxed hidden">
             Sangat aman. Kami menerapkan enkripsi end-to-end AES-256. Data audio dan transkrip rapat Anda tidak pernah digunakan untuk melatih model AI publik manapun. Bagi korporat atau instansi dengan privasi ketat, kami menyediakan opsi deployment di Private Cloud (Sitkrop Infra Proxsis) atau server On-Premise milik Anda sendiri.
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center gap-4 hover:bg-slate-800/50 transition-colors" onclick="toggleFaq(this)">
             <span>Seberapa akurat transkripsi untuk Bahasa Indonesia campur bahasa Inggris (Bahasa Gaul Kantor)?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
           </button>
-          <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+          <div class="px-6 pb-5 text-slate-400 text-sm leading-relaxed hidden">
             Engine kami telah dilatih secara khusus dengan korpus bahasa bisnis Indonesia. Istilah lazim seperti "follow up", "asap", "budgeting", "deadline Jumat ini", "PIC-nya Mas Doni" dapat dipahami dengan akurasi lebih dari 99% dan langsung dipetakan ke field yang benar dalam Minutes of Meeting.
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center gap-4 hover:bg-slate-800/50 transition-colors" onclick="toggleFaq(this)">
             <span>Apakah hasil Minutes of Meeting (MoM) bisa diedit sebelum disahkan?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
           </button>
-          <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+          <div class="px-6 pb-5 text-slate-400 text-sm leading-relaxed hidden">
             Tentu saja! Notulis atau sekretaris tetap memiliki kontrol penuh. Anda dapat melakukan editing teks, menambahkan poin catatan manual, menyesuaikan PIC, lalu mengirimkan tautan persetujuan (approval review) kepada Pimpinan Rapat sebelum diekspor ke PDF resmi.
           </div>
         </div>
 
         <!-- FAQ 5 -->
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-          <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors" onclick="toggleFaq(this)">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center gap-4 hover:bg-slate-800/50 transition-colors" onclick="toggleFaq(this)">
             <span>Bisakah format MoM disesuaikan dengan template resmi perusahaan kami?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
           </button>
-          <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+          <div class="px-6 pb-5 text-slate-400 text-sm leading-relaxed hidden">
             Ya! Untuk paket Pro Team dan Enterprise, Anda bisa mengunggah header kop surat, logo instansi, format penomoran dokumen resmi (misal: NOMOR: 042/DIR-MOM/XI/2026), serta susunan kolom tabel sesuai SOP perusahaan Anda.
           </div>
         </div>
@@ -1176,13 +1177,13 @@
     </div>
   </section>
 
-  <!-- ==================== FINAL CALL TO ACTION ==================== -->
-  <section class="py-20 bg-gradient-to-tr from-brand-900 via-brand-800 to-indigo-900 text-white relative overflow-hidden">
-    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-20 -top-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- ==================== FINAL CALL TO ACTION (DARK) ==================== -->
+  <section class="py-20 bg-gradient-to-tr from-slate-950 via-brand-950 to-indigo-950 text-white relative overflow-hidden border-t border-slate-800">
+    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute -left-20 -top-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-brand-200 text-xs font-semibold mb-6 border border-white/15">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-brand-300 text-xs font-semibold mb-6 border border-white/15">
         <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i> Siap Meningkatkan Efektivitas Rapat Anda?
       </div>
 
@@ -1191,46 +1192,46 @@
         Otomatis Hari Ini. Tanpa Ribet.
       </h2>
 
-      <p class="text-base sm:text-lg text-brand-100 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
         Bergabunglah bersama ratusan tim profesional yang telah memangkas 80% waktu administrasi rapat. Coba gratis 14 hari penuh tanpa perlu kartu kredit.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button onclick="openDemoModal('Daftar Cepat Hero Bottom')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-brand-900 font-extrabold text-base shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5">
+        <button onclick="openDemoModal('Daftar Cepat Hero Bottom')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-base shadow-xl shadow-brand-600/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5">
           <span>Daftar Uji Coba Gratis 14 Hari</span>
-          <i data-lucide="arrow-right" class="w-5 h-5 text-brand-700"></i>
+          <i data-lucide="arrow-right" class="w-5 h-5 text-white"></i>
         </button>
-        <button onclick="openDemoModal('Jadwalkan Demo Tim')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/20 transition-all flex items-center justify-center gap-2">
-          <i data-lucide="calendar" class="w-5 h-5 text-brand-200"></i>
+        <button onclick="openDemoModal('Jadwalkan Demo Tim')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base border border-slate-700 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="calendar" class="w-5 h-5 text-brand-400"></i>
           <span>Jadwalkan Live Demo untuk Tim</span>
         </button>
       </div>
 
-      <p class="text-xs text-brand-200/80 mt-6">
+      <p class="text-xs text-slate-400 mt-6">
         🔒 Bebas risiko • Pembatalan kapan saja • Dukungan tim lokal Indonesia
       </p>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-slate-950 text-slate-400 text-xs sm:text-sm py-16 border-t border-slate-900">
+  <!-- ==================== FOOTER (DARK) ==================== -->
+  <footer class="bg-black text-slate-400 text-xs sm:text-sm py-16 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
       <!-- Col 1: Brand Info -->
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold">
+          <div class="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold shadow-md shadow-brand-600/30">
             <i data-lucide="file-check-2" class="w-5 h-5"></i>
           </div>
-          <span class="text-xl font-extrabold text-white">Notula<span class="text-brand-500">MoM</span></span>
+          <span class="text-xl font-extrabold text-white">Notula<span class="text-brand-400">MoM</span></span>
         </div>
         <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
           Platform otomasi Minutes of Meeting (MoM) & Notulensi Rapat AI no. 1 di Indonesia. Mengubah diskusi rapat menjadi keputusan mengikat dan eksekusi nyata.
         </p>
         <div class="flex items-center gap-3 text-slate-400 pt-2">
-          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white border border-slate-800 flex items-center justify-center transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white border border-slate-800 flex items-center justify-center transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white border border-slate-800 flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-brand-600 hover:text-white border border-slate-800 flex items-center justify-center transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
         </div>
       </div>
 
@@ -1271,59 +1272,59 @@
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 mt-10 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 mt-10 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
       <div>
         &copy; 2026 NotulaMoM Technologies. Seluruh Hak Cipta Dilindungi Undang-Undang.
       </div>
       <div class="flex items-center gap-4">
         <span>Didukung oleh Infrastruktur Cloud Terpercaya</span>
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== INTERACTIVE MODAL (REGISTRATION / DEMO BOOKING) ==================== -->
-  <div id="demo-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-200">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 transform scale-95 transition-transform duration-200" id="modal-container">
-      <button onclick="closeDemoModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors">
+  <!-- ==================== MODAL (DARK THEME) ==================== -->
+  <div id="demo-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-200">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-700 transform scale-95 transition-transform duration-200" id="modal-container">
+      <button onclick="closeDemoModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1.5 rounded-full hover:bg-slate-800 transition-colors">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center">
+        <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 border border-brand-500/30 flex items-center justify-center">
           <i data-lucide="sparkles" class="w-5 h-5"></i>
         </div>
         <div>
-          <h3 class="font-extrabold text-slate-900 text-lg" id="modal-title">Coba Gratis NotulaMoM</h3>
-          <p class="text-xs text-slate-500">Akses penuh 14 hari tanpa biaya komitmen.</p>
+          <h3 class="font-extrabold text-white text-lg" id="modal-title">Coba Gratis NotulaMoM</h3>
+          <p class="text-xs text-slate-400">Akses penuh 14 hari tanpa biaya komitmen.</p>
         </div>
       </div>
 
       <form id="demo-form" onsubmit="handleFormSubmit(event)" class="space-y-4 mt-4">
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap</label>
-          <input type="text" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+          <label class="block text-xs font-bold text-slate-300 mb-1">Nama Lengkap</label>
+          <input type="text" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Email Kantor / Bisnis</label>
-          <input type="email" required placeholder="budi@perusahaan.co.id" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+          <label class="block text-xs font-bold text-slate-300 mb-1">Email Kantor / Bisnis</label>
+          <input type="email" required placeholder="budi@perusahaan.co.id" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp</label>
-            <input type="tel" required placeholder="08123456789" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+            <label class="block text-xs font-bold text-slate-300 mb-1">Nomor WhatsApp</label>
+            <input type="tel" required placeholder="08123456789" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Perusahaan</label>
-            <input type="text" required placeholder="PT Maju Bersama" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+            <label class="block text-xs font-bold text-slate-300 mb-1">Nama Perusahaan</label>
+            <input type="text" required placeholder="PT Maju Bersama" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Platform Meeting Utama</label>
-          <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 bg-white">
+          <label class="block text-xs font-bold text-slate-300 mb-1">Platform Meeting Utama</label>
+          <select class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
             <option>Google Meet</option>
             <option>Zoom Meetings</option>
             <option>Microsoft Teams</option>
@@ -1332,7 +1333,7 @@
         </div>
 
         <div class="pt-2">
-          <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
+          <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
             <span>Dapatkan Akses Demo Sekarang</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -1340,14 +1341,14 @@
       </form>
 
       <div id="modal-success" class="hidden text-center py-8 space-y-3">
-        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
           <i data-lucide="check" class="w-8 h-8"></i>
         </div>
-        <h4 class="font-extrabold text-slate-900 text-lg">Permintaan Terkirim!</h4>
-        <p class="text-xs text-slate-600 max-w-xs mx-auto">
+        <h4 class="font-extrabold text-white text-lg">Permintaan Terkirim!</h4>
+        <p class="text-xs text-slate-400 max-w-xs mx-auto">
           Tim NotulaMoM telah mengirimkan akses uji coba dan panduan ringkas ke email dan WhatsApp Anda.
         </p>
-        <button onclick="closeDemoModal()" class="mt-4 px-6 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs">
+        <button onclick="closeDemoModal()" class="mt-4 px-6 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-xs hover:bg-slate-700 transition-colors">
           Tutup
         </button>
       </div>
@@ -1355,7 +1356,7 @@
   </div>
 
   <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-semibold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-slate-700 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-semibold transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
     <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
     <span id="toast-msg">Notulensi berhasil disalin ke clipboard!</span>
   </div>

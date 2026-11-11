@@ -1,6 +1,6 @@
 // ==========================================
 // NotulaMoM - AI Minutes of Meeting Platform
-// Interactive Frontend Script
+// Interactive Frontend Script (Dark Theme)
 // ==========================================
 
 // Sample Datasets for Interactive MoM Presets
@@ -142,7 +142,7 @@ Manajemen mengumumkan kebijakan Flexible Working Arrangement (3 WFO / 2 WFA) mul
 
 let currentPresetKey = 'sprint';
 
-// Render MoM Preset
+// Render MoM Preset with Dark Theme Styling
 function renderPreset(key) {
   currentPresetKey = key;
   const data = momPresets[key];
@@ -154,15 +154,15 @@ function renderPreset(key) {
   const contentContainer = document.getElementById('preset-content');
   
   let actionItemsRows = data.actionItems.map(item => `
-    <tr class="hover:bg-slate-50/80 transition-colors">
-      <td class="py-2.5 px-3 font-semibold text-slate-800">${item.task}</td>
+    <tr class="hover:bg-slate-800/60 transition-colors">
+      <td class="py-2.5 px-3 font-semibold text-white">${item.task}</td>
       <td class="py-2.5 px-3">
-        <div class="font-medium text-slate-900">${item.pic}</div>
+        <div class="font-medium text-slate-200">${item.pic}</div>
         <div class="text-[10px] text-slate-400">${item.role}</div>
       </td>
-      <td class="py-2.5 px-3 text-slate-600 font-mono text-[11px]">${item.deadline}</td>
+      <td class="py-2.5 px-3 text-slate-400 font-mono text-[11px]">${item.deadline}</td>
       <td class="py-2.5 px-3">
-        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-${item.statusColor}-100 text-${item.statusColor}-800 border border-${item.statusColor}-200">
+        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-${item.statusColor}-500/20 text-${item.statusColor}-300 border border-${item.statusColor}-500/30">
           ${item.status}
         </span>
       </td>
@@ -170,25 +170,25 @@ function renderPreset(key) {
   `).join('');
 
   let decisionsList = data.decisions.map(item => `
-    <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-      <div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px] font-black shrink-0 mt-0.5">✓</div>
+    <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+      <div class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-[10px] font-black shrink-0 mt-0.5">✓</div>
       <span>${item}</span>
     </li>
   `).join('');
 
   contentContainer.innerHTML = `
     <!-- Executive Summary Box -->
-    <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100">
-      <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-        <i data-lucide="sparkles" class="w-4 h-4 text-brand-600"></i> Ringkasan Eksekutif (AI Generated)
+    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80">
+      <h5 class="font-bold text-brand-300 text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+        <i data-lucide="sparkles" class="w-4 h-4 text-brand-400"></i> Ringkasan Eksekutif (AI Generated)
       </h5>
-      <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">${data.summary}</p>
+      <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">${data.summary}</p>
     </div>
 
     <!-- Key Decisions -->
     <div>
-      <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-        <i data-lucide="check-circle" class="w-4 h-4 text-indigo-600"></i> Keputusan Resmi Rapat (Binding Decisions)
+      <h5 class="font-bold text-slate-200 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+        <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400"></i> Keputusan Resmi Rapat (Binding Decisions)
       </h5>
       <ul class="space-y-2">
         ${decisionsList}
@@ -198,14 +198,14 @@ function renderPreset(key) {
     <!-- Action Items Table -->
     <div>
       <div class="flex items-center justify-between mb-2">
-        <h5 class="font-bold text-slate-800 text-xs uppercase tracking-wider flex items-center gap-1.5">
-          <i data-lucide="list-checks" class="w-4 h-4 text-amber-600"></i> Matriks Tindak Lanjut & Penanggung Jawab (PIC)
+        <h5 class="font-bold text-slate-200 text-xs uppercase tracking-wider flex items-center gap-1.5">
+          <i data-lucide="list-checks" class="w-4 h-4 text-amber-400"></i> Matriks Tindak Lanjut & Penanggung Jawab (PIC)
         </h5>
         <span class="text-[11px] text-slate-400">Sinkron ke WhatsApp & Jira</span>
       </div>
-      <div class="overflow-x-auto border border-slate-200 rounded-xl">
+      <div class="overflow-x-auto border border-slate-700/80 rounded-xl">
         <table class="w-full text-left text-xs">
-          <thead class="bg-slate-100/80 text-slate-600 font-bold uppercase text-[10px] border-b border-slate-200">
+          <thead class="bg-slate-800/90 text-slate-400 font-bold uppercase text-[10px] border-b border-slate-700">
             <tr>
               <th class="py-2.5 px-3">Tugas / Action Item</th>
               <th class="py-2.5 px-3">PIC (Penanggung Jawab)</th>
@@ -213,7 +213,7 @@ function renderPreset(key) {
               <th class="py-2.5 px-3">Status</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-100 bg-white">
+          <tbody class="divide-y divide-slate-800 bg-slate-900/60">
             ${actionItemsRows}
           </tbody>
         </table>
@@ -232,9 +232,9 @@ function switchPreset(key) {
   const buttons = document.querySelectorAll('#preset-buttons .preset-btn');
   buttons.forEach(btn => {
     if (btn.dataset.preset === key) {
-      btn.className = 'preset-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-brand-600 text-white border-brand-600 shadow-md shadow-brand-600/20';
+      btn.className = 'preset-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-brand-600 text-white border-brand-500 shadow-md shadow-brand-600/30';
     } else {
-      btn.className = 'preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200';
+      btn.className = 'preset-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all duration-200 bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800';
     }
   });
 
@@ -371,10 +371,6 @@ function updateRoiCalculation() {
   attendeesVal.textContent = `${attendees} Orang`;
   rateVal.textContent = `${formatRupiah(hourlyRate)} / jam`;
 
-  // Assumption:
-  // Each meeting traditionally consumes ~1.5 hours of note-taking + formatting + follow-up per meeting.
-  // With NotulaMoM, this drops to 0.1 hours (saving 1.4 hours per meeting).
-  // Monthly (x 4.3 weeks)
   const monthlyMeetings = meetings * 4.3;
   const hoursSavedPerMonth = Math.round(monthlyMeetings * 1.4);
   const moneySavedPerMonth = hoursSavedPerMonth * hourlyRate;
@@ -391,7 +387,7 @@ if (meetingsSlider && attendeesSlider && rateSlider) {
 }
 
 // ==========================================
-// Billing Cycle Toggle (Monthly vs Annual)
+// Billing Cycle Toggle (Monthly vs Annual) - Dark
 // ==========================================
 const btnMonthly = document.getElementById('billing-monthly');
 const btnAnnual = document.getElementById('billing-annual');
@@ -400,16 +396,15 @@ const periodPro = document.getElementById('period-pro');
 
 if (btnMonthly && btnAnnual && pricePro) {
   btnMonthly.addEventListener('click', () => {
-    btnMonthly.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-sm';
-    btnAnnual.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1.5';
+    btnMonthly.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-slate-800 text-white shadow-sm';
+    btnAnnual.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5';
     pricePro.textContent = 'Rp 199.000';
     periodPro.textContent = '/ user / bln';
   });
 
   btnAnnual.addEventListener('click', () => {
-    btnAnnual.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-sm flex items-center gap-1.5';
-    btnMonthly.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
-    // 20% discount: 199.000 * 0.8 = ~159.000
+    btnAnnual.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-slate-800 text-white shadow-sm flex items-center gap-1.5';
+    btnMonthly.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
     pricePro.textContent = 'Rp 159.000';
     periodPro.textContent = '/ user / bln (tagihan tahunan)';
   });
@@ -538,9 +533,9 @@ window.addEventListener('scroll', () => {
   const header = document.getElementById('main-header');
   if (header) {
     if (window.scrollY > 20) {
-      header.classList.add('shadow-sm');
+      header.classList.add('shadow-lg', 'shadow-black/50');
     } else {
-      header.classList.remove('shadow-sm');
+      header.classList.remove('shadow-lg', 'shadow-black/50');
     }
   }
 });
@@ -549,10 +544,8 @@ window.addEventListener('scroll', () => {
 // Initialize on DOM Ready
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Initial preset render
   renderPreset('sprint');
 
-  // Initialize Lucide icons
   if (window.lucide) {
     lucide.createIcons();
   }
